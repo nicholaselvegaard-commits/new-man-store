@@ -69,11 +69,14 @@
       min-height: 70vh;
       padding: 5rem 1rem;
       color: #fff;
+      display: flex;
+      align-items: center;
 
-      /* Bakgrunnsbilde + mørk overlay */
+      /* stort bakgrunnsbilde + mørk overlay */
       background:
-        linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45)),
-        url('bilder/Skjermbilde 2025-12-10 094331.png') center/cover no-repeat;
+        linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+        url('bilder/logo.png') center/contain no-repeat,
+        #111;
     }
 
     .hero-inner {
@@ -114,27 +117,15 @@
       cursor: pointer;
       transition: 0.2s;
       display: inline-block;
-    }
-
-    .btn-primary {
       background: #fff;
       color: #111;
     }
 
-    .btn-primary:hover {
+    .btn:hover {
       background: #e5e5e5;
     }
 
-    .btn-ghost {
-      background: transparent;
-      color: #fff;
-    }
-
-    .btn-ghost:hover {
-      background: #ffffff22;
-    }
-
-    /* SECTIONS GENERELT */
+    /* SEKSJONER */
     section {
       padding: 3rem 1rem;
     }
@@ -161,34 +152,6 @@
       max-width: 40rem;
       font-size: 0.98rem;
       color: #333;
-    }
-
-    /* GALLERI */
-    .gallery {
-      margin-top: 1.8rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      border-radius: 1rem;
-      overflow: hidden;
-      background: #ddd;
-      border: 1px solid #ddd;
-    }
-
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .gallery-caption {
-      padding: 0.7rem 0.9rem 0.9rem;
-      font-size: 0.85rem;
-      color: #555;
     }
 
     /* KONTAKT / KART */
@@ -276,22 +239,20 @@
       <div class="logo">NEW MAN STORE</div>
       <nav class="nav-links">
         <a href="#om">Butikken</a>
-        <a href="#bilder">Bilder</a>
-        <a href="#kontakt">Kontakt & åpningstider</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO MED BAKGRUNNSBILDET DITT -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner hero-text">
       <h1>New Man Store</h1>
       <h2>Herreklær · kvalitet · service</h2>
       <p>
-        New Man Store er en klesbutikk for menn i Bodø, med fokus på gode passformer, tidløs stil og personlig
-        service.
+        New Man Store er en klesbutikk for menn i Bodø, med fokus på gode passformer, tidløs stil og personlig service.
       </p>
-      <a href="#kontakt" class="btn btn-primary">Se kontaktinfo</a>
+      <a href="#kontakt" class="btn">Se kontaktinfo</a>
     </div>
   </section>
 
@@ -304,26 +265,6 @@
         New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr alt fra jeans, skjorter og strikk
         til jakker, dresser og tilbehør.
       </p>
-    </div>
-  </section>
-
-  <!-- BILDER -->
-  <section id="bilder">
-    <div class="section-inner">
-      <p class="section-title">Bilder</p>
-      <h2 class="section-heading">Et lite glimt fra butikken</h2>
-
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="bilder/interior-1.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-          <img src="bilder/interior-2.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-          <img src="bilder/interior-3.jpg" alt="">
-        </div>
-      </div>
     </div>
   </section>
 
@@ -364,7 +305,6 @@
           </p>
         </div>
 
-        <!-- KART -->
         <div class="map-wrapper">
           <iframe
             src="https://maps.google.com/maps?q=New%20Man%20Store%20AS%2C%20Storgata%205%2C%208006%20Bod%C3%B8&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -374,7 +314,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div>© <span id="year"></span> New Man Store. Alle rettigheter forbeholdt.</div>
