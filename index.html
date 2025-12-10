@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <title>New Man Store – Herreklær i Bodø</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, #111 0%, #333 40%, #777 100%);
+      color: #fff;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text p {
+      max-width: 32rem;
+      font-size: 0.98rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.9rem;
+      border: 1px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: #e5e5e5;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      background: #ffffff22;
+    }
+
+    .hero-image {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid #555;
+      background: #222;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 360px;
+      object-fit: cover;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 1rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-heading {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-text {
+      max-width: 40rem;
+      font-size: 0.98rem;
+      color: #333;
+    }
+
+    /* GALLERY */
+    .gallery {
+      margin-top: 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #ddd;
+      border: 1px solid #ddd;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 0.7rem 0.9rem 0.9rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* CONTACT / LOCATION */
+    .contact-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #ddd;
+    }
+
+    .contact-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.4rem;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    .map-wrapper {
+      background: #ddd;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      min-height: 260px;
+    }
+
+    .map-wrapper iframe {
+      border: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 1.5rem 1rem 2rem;
+      background: #111;
+      color: #ccc;
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-inner a {
+      opacity: 0.8;
+    }
+
+    .footer-inner a:hover {
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none; /* enkel mobilmeny (skjuler lenker) */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">NEW MAN STORE</div>
+      <nav class="nav-links">
+        <a href="#om">Butikken</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#kontakt">Kontakt & åpningstider</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>New Man Store</h1>
+          <h2>Herreklær · kvalitet · service</h2>
+          <p>
+            New Man Store er en klesbutikk for menn i Bodø, med fokus på gode passformer, tidløs stil og personlig
+            service. Enten du trenger klær til jobb, hverdag eller spesielle anledninger, hjelper vi deg å finne riktig uttrykk.
+          </p>
+          <div class="hero-cta">
+            <a href="#kontakt" class="btn btn-primary">Se kontaktinfo</a>
+            <a href="#bilder" class="btn btn-ghost">Bla i bildene</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- BYTT BILDE HER -->
+          <img src="bilder/butikk-front.jpg" alt="Inngangen til New Man Store i Bodø" />
+        </div>
+      </div>
+    </section>
+
+    <!-- OM BUTIKKEN -->
+    <section id="om">
+      <div class="section-inner">
+        <p class="section-title">Butikk</p>
+        <h2 class="section-heading">Herrebutikk i Bodø</h2>
+        <p class="section-text">
+          New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr alt fra jeans, skjorter og strikk
+          til jakker, dresser og tilbehør. Vi legger vekt på en rolig og hyggelig handleopplevelse, hvor du får god hjelp
+          hvis du ønsker det – eller kan kikke i fred.
+        </p>
+      </div>
+    </section>
+
+    <!-- BILDER -->
+    <section id="bilder">
+      <div class="section-inner">
+        <p class="section-title">Bilder</p>
+        <h2 class="section-heading">Et lite glimt fra butikken</h2>
+        <p class="section-text">
+          Her er noen bilder fra butikken. Vi anbefaler uansett å ta turen innom – utvalget endrer seg gjennom sesongen.
+        </p>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <!-- BYTT BILDE -->
+            <img src="bilder/interior-1.jpg" alt="Interiør fra New Man Store" />
+            <div class="gallery-caption">Interiør og utstilling</div>
+          </div>
+          <div class="gallery-item">
+            <!-- BYTT BILDE -->
+            <img src="bilder/interior-2.jpg" alt="Klesstativ med herreklær" />
+            <div class="gallery-caption">Utvalg av skjorter og jakker</div>
+          </div>
+          <div class="gallery-item">
+            <!-- BYTT BILDE -->
+            <img src="bilder/interior-3.jpg" alt="Prøveområde i butikken" />
+            <div class="gallery-caption">Prøverom og sitteområde</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT / LOKASJON -->
+    <section id="kontakt">
+      <div class="section-inner">
+        <p class="section-title">Kontakt</p>
+        <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
+
+        <div class="contact-grid">
+          <!-- KONTAKTINFO -->
+          <div class="contact-card">
+            <h3>New Man Store</h3>
+
+            <div style="margin-bottom: 1rem;">
+              <span class="label">Adresse</span>
+              <div>Storgata 5<br />8006 Bodø</div>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <span class="label">Telefon</span>
+              <a href="tel:+4775522039">75522039</a>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <span class="label">E-post</span>
+              <a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <span class="label">Åpningstider</span>
+              <ul class="contact-list">
+                <li>Mandag: 10:00 – 20:00</li>
+                <li>Tirsdag: 10:00 – 20:00</li>
+                <li>Onsdag: 10:00 – 20:00</li>
+                <li>Torsdag: 10:00 – 20:00</li>
+                <li>Fredag: 10:00 – 20:00</li>
+                <li>Lørdag: 10:00 – 18:00</li>
+                <li>Søndag: Stengt</li>
+              </ul>
+            </div>
+
+            <div>
+              <span class="label">Følg oss</span>
+              <div>
+                <a href="https://www.instagram.com/newmanstore/" target="_blank" rel="noopener noreferrer">
+                  Instagram
+                </a>
+                &nbsp;·&nbsp;
+                <a href="https://www.facebook.com/newmanstore" target="_blank" rel="noopener noreferrer">
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- KART -->
+          <div class="map-wrapper">
+            <!--
+              Tips: For å få et helt korrekt kart:
+              1. Gå til Google Maps
+              2. Søk på "Storgata 5, 8006 Bodø"
+              3. Trykk "Del" → "Bygg inn et kart"
+              4. Kopier iframe-koden og erstatt denne:
+            -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d14.392!3d67.28!2m3!1f0!2f0!3f0!3m2!1sno!2sno!4v0000000000000"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> New Man Store. Alle rettigheter forbeholdt.</div>
+      <div>Laget av Nicholas 🌐</div>
+    </div>
+  </footer>
+
+  <script>
+    // Setter riktig år i footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
