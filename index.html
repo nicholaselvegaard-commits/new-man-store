@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>New Man Store – Herreklær i Bodø</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -23,6 +24,7 @@
       text-decoration: none;
     }
 
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -63,7 +65,7 @@
       color: #fff;
     }
 
-    /* HERO MED BAKGRUNNSBILDE */
+    /* HERO MED DITT BAKGRUNNSBILDE */
     .hero {
       min-height: 75vh;
       padding: 6rem 1rem 5rem;
@@ -72,7 +74,7 @@
       align-items: center;
       background:
         linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55)),
-        url('image(11).jpg') center/cover no-repeat;
+        url('Image%20(11).jpg') center/cover no-repeat;
     }
 
     .hero-inner {
@@ -149,7 +151,7 @@
       color: #333;
     }
 
-    /* MERKER */
+    /* MERKER GRID */
     .brand-grid {
       margin-top: 1.8rem;
       display: grid;
@@ -168,7 +170,7 @@
       text-align: center;
     }
 
-    /* GALLERI MED 3 BILDER */
+    /* GALLERI - 3 BILDER */
     .gallery {
       margin-top: 2rem;
       display: grid;
@@ -211,6 +213,13 @@
       border: 1px solid #ddd;
     }
 
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+    }
+
     .map-wrapper {
       background: #ddd;
       border-radius: 1.2rem;
@@ -244,8 +253,10 @@
     }
   </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="nav">
     <div class="logo">NEW MAN STORE</div>
@@ -257,6 +268,7 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner hero-text">
     <h1>NEW MAN STORE</h1>
@@ -266,14 +278,16 @@
   </div>
 </section>
 
+<!-- BUTIKKEN -->
 <section id="butikken">
   <div class="section-inner">
     <p class="section-title">Butikk</p>
     <h2 class="section-heading">Herrebutikk i Bodø</h2>
     <p class="section-text">
-      New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr et nøye utvalg av kvalitetsmerker og tidløse plagg.
+      New Man Store ligger i Storgata 5, 8006 Bodø. Vi fører et nøye utvalg av kvalitetsmerker innen herremote.
     </p>
 
+    <!-- MERKER -->
     <div style="margin-top: 2rem;">
       <p class="section-title">Merker</p>
       <div class="brand-grid">
@@ -298,6 +312,7 @@
   </div>
 </section>
 
+<!-- GALLERI -->
 <section id="bilder">
   <div class="section-inner">
     <p class="section-title">Bilder</p>
@@ -305,21 +320,24 @@
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="image(10).jpg" alt="Bord med gensere og sko" />
+        <img src="Image%20(10).jpg" alt="Bord med gensere og sko" />
         <div class="gallery-caption">Strikk, bukser og kvalitetsplagg.</div>
       </div>
+
       <div class="gallery-item">
-        <img src="image(12).jpg" alt="Dress på dukke" />
-        <div class="gallery-caption">Dress og skjorte til jobb og selskaper.</div>
+        <img src="Image%20(12).jpg" alt="Dress på dukke" />
+        <div class="gallery-caption">Dress og skjorte til jobb og fest.</div>
       </div>
+
       <div class="gallery-item">
-        <img src="image(13).jpg" alt="Barbour jakke" />
-        <div class="gallery-caption">Yttertøy og lag-på-lag-stil.</div>
+        <img src="Image%20(13).jpg" alt="Barbour jakke" />
+        <div class="gallery-caption">Yttertøy og lag-på-lag stil.</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- KONTAKT -->
 <section id="kontakt">
   <div class="section-inner">
     <p class="section-title">Kontakt</p>
@@ -343,6 +361,12 @@
           <li>Man–Fre: 10–20</li>
           <li>Lørdag: 10–18</li>
         </ul>
+
+        <span class="label">Følg oss</span>
+        <p>
+          <a href="https://www.instagram.com/newmanstore/" target="_blank">Instagram</a> ·
+          <a href="https://www.facebook.com/newmanstore" target="_blank">Facebook</a>
+        </p>
       </div>
 
       <div class="map-wrapper">
@@ -352,6 +376,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>© <span id="year"></span> New Man Store</div>
