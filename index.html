@@ -23,7 +23,6 @@
       text-decoration: none;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -50,8 +49,8 @@
 
     .nav-links {
       display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
+      gap: 1.5rem;
+      font-size: 0.95rem;
     }
 
     .nav-links a {
@@ -66,17 +65,14 @@
 
     /* HERO MED BAKGRUNNSBILDE */
     .hero {
-      min-height: 70vh;
-      padding: 5rem 1rem;
+      min-height: 75vh;
+      padding: 6rem 1rem 5rem;
       color: #fff;
       display: flex;
       align-items: center;
-
-      /* stort bakgrunnsbilde + mørk overlay */
       background:
-        linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
-        url('bilder/logo.png') center/contain no-repeat,
-        #111;
+        linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55)),
+        url('image(11).jpg') center/cover no-repeat;
     }
 
     .hero-inner {
@@ -85,49 +81,48 @@
     }
 
     .hero-text h1 {
-      font-size: clamp(2.6rem, 5vw, 3.4rem);
-      letter-spacing: 0.1em;
+      font-size: clamp(2.8rem, 5vw, 3.8rem);
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.8rem;
     }
 
     .hero-text h2 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      opacity: 0.9;
-      margin-bottom: 1.3rem;
+      letter-spacing: 0.26em;
+      opacity: 0.95;
+      margin-bottom: 1.4rem;
     }
 
     .hero-text p {
       max-width: 34rem;
-      font-size: 1.05rem;
-      opacity: 0.92;
-      margin-bottom: 1.7rem;
+      font-size: 1.02rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
     }
 
     .btn {
       border-radius: 999px;
-      padding: 0.75rem 1.4rem;
+      padding: 0.8rem 1.8rem;
       font-size: 0.9rem;
       border: 1px solid #fff;
+      background: #fff;
+      color: #111;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
       cursor: pointer;
       transition: 0.2s;
       display: inline-block;
-      background: #fff;
-      color: #111;
     }
 
     .btn:hover {
       background: #e5e5e5;
     }
 
-    /* SEKSJONER */
     section {
-      padding: 3rem 1rem;
+      padding: 3.5rem 1rem;
     }
 
     .section-inner {
@@ -140,23 +135,70 @@
       letter-spacing: 0.18em;
       font-size: 0.9rem;
       color: #888;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
 
     .section-heading {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
 
     .section-text {
-      max-width: 40rem;
+      max-width: 42rem;
       font-size: 0.98rem;
       color: #333;
     }
 
+    /* MERKER */
+    .brand-grid {
+      margin-top: 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.7rem;
+    }
+
+    .brand-pill {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #fff;
+      text-align: center;
+    }
+
+    /* GALLERI MED 3 BILDER */
+    .gallery {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      border-radius: 1.1rem;
+      overflow: hidden;
+      background: #ddd;
+      border: 1px solid #ddd;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 0.8rem 1rem 1rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
     /* KONTAKT / KART */
     .contact-grid {
-      margin-top: 2rem;
+      margin-top: 2.2rem;
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
       gap: 2rem;
@@ -165,31 +207,8 @@
     .contact-card {
       background: #fff;
       border-radius: 1.2rem;
-      padding: 1.2rem 1.4rem;
+      padding: 1.4rem 1.6rem;
       border: 1px solid #ddd;
-    }
-
-    .contact-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      font-size: 0.95rem;
-    }
-
-    .contact-list li + li {
-      margin-top: 0.4rem;
-    }
-
-    .label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #777;
-      margin-bottom: 0.2rem;
-      display: block;
     }
 
     .map-wrapper {
@@ -201,13 +220,11 @@
     }
 
     .map-wrapper iframe {
-      border: 0;
       width: 100%;
       height: 100%;
-      min-height: 260px;
+      border: 0;
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid #ddd;
       padding: 1.5rem 1rem 2rem;
@@ -225,105 +242,126 @@
       align-items: center;
       justify-content: space-between;
     }
-
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
-    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="nav">
-      <div class="logo">NEW MAN STORE</div>
-      <nav class="nav-links">
-        <a href="#om">Butikken</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav">
+    <div class="logo">NEW MAN STORE</div>
+    <nav class="nav-links">
+      <a href="#butikken">Butikken</a>
+      <a href="#bilder">Bilder</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner hero-text">
-      <h1>New Man Store</h1>
-      <h2>Herreklær · kvalitet · service</h2>
-      <p>
-        New Man Store er en klesbutikk for menn i Bodø, med fokus på gode passformer, tidløs stil og personlig service.
-      </p>
-      <a href="#kontakt" class="btn">Se kontaktinfo</a>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-inner hero-text">
+    <h1>NEW MAN STORE</h1>
+    <h2>HERREKLÆR · KVALITET · SERVICE</h2>
+    <p>New Man Store er en klesbutikk for menn i Bodø med fokus på gode passformer, tidløs stil og personlig service.</p>
+    <a class="btn" href="#kontakt">Se kontaktinfo</a>
+  </div>
+</section>
 
-  <!-- OM BUTIKKEN -->
-  <section id="om">
-    <div class="section-inner">
-      <p class="section-title">Butikk</p>
-      <h2 class="section-heading">Herrebutikk i Bodø</h2>
-      <p class="section-text">
-        New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr alt fra jeans, skjorter og strikk
-        til jakker, dresser og tilbehør.
-      </p>
-    </div>
-  </section>
+<section id="butikken">
+  <div class="section-inner">
+    <p class="section-title">Butikk</p>
+    <h2 class="section-heading">Herrebutikk i Bodø</h2>
+    <p class="section-text">
+      New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr et nøye utvalg av kvalitetsmerker og tidløse plagg.
+    </p>
 
-  <!-- KONTAKT -->
-  <section id="kontakt">
-    <div class="section-inner">
-      <p class="section-title">Kontakt</p>
-      <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>New Man Store</h3>
-
-          <span class="label">Adresse</span>
-          <p>Storgata 5<br>8006 Bodø</p>
-
-          <span class="label">Telefon</span>
-          <p><a href="tel:+4775522039">75522039</a></p>
-
-          <span class="label">E-post</span>
-          <p><a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a></p>
-
-          <span class="label">Åpningstider</span>
-          <ul class="contact-list">
-            <li>Mandag: 10:00 – 20:00</li>
-            <li>Tirsdag: 10:00 – 20:00</li>
-            <li>Onsdag: 10:00 – 20:00</li>
-            <li>Torsdag: 10:00 – 20:00</li>
-            <li>Fredag: 10:00 – 20:00</li>
-            <li>Lørdag: 10:00 – 18:00</li>
-            <li>Søndag: Stengt</li>
-          </ul>
-
-          <span class="label">Følg oss</span>
-          <p>
-            <a href="https://www.instagram.com/newmanstore/">Instagram</a> ·
-            <a href="https://www.facebook.com/newmanstore">Facebook</a>
-          </p>
-        </div>
-
-        <div class="map-wrapper">
-          <iframe
-            src="https://maps.google.com/maps?q=New%20Man%20Store%20AS%2C%20Storgata%205%2C%208006%20Bod%C3%B8&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"></iframe>
-        </div>
+    <div style="margin-top: 2rem;">
+      <p class="section-title">Merker</p>
+      <div class="brand-grid">
+        <div class="brand-pill">Samsøe Samsøe</div>
+        <div class="brand-pill">Barbour</div>
+        <div class="brand-pill">Morris</div>
+        <div class="brand-pill">Holzweiler</div>
+        <div class="brand-pill">Tiger of Sweden</div>
+        <div class="brand-pill">Hestra</div>
+        <div class="brand-pill">Calvin Klein</div>
+        <div class="brand-pill">Scandinavian Edition</div>
+        <div class="brand-pill">Stenstrøm</div>
+        <div class="brand-pill">Jhonny Love</div>
+        <div class="brand-pill">Mono</div>
+        <div class="brand-pill">Common Project</div>
+        <div class="brand-pill">Replay</div>
+        <div class="brand-pill">Amanda Christensen</div>
+        <div class="brand-pill">Pampeano</div>
+        <div class="brand-pill">Bjørn Borg</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> New Man Store. Alle rettigheter forbeholdt.</div>
-      <div>Laget av Nicholas 🌐</div>
+<section id="bilder">
+  <div class="section-inner">
+    <p class="section-title">Bilder</p>
+    <h2 class="section-heading">Et lite glimt fra butikken</h2>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="image(10).jpg" alt="Bord med gensere og sko" />
+        <div class="gallery-caption">Strikk, bukser og kvalitetsplagg.</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image(12).jpg" alt="Dress på dukke" />
+        <div class="gallery-caption">Dress og skjorte til jobb og selskaper.</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image(13).jpg" alt="Barbour jakke" />
+        <div class="gallery-caption">Yttertøy og lag-på-lag-stil.</div>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<section id="kontakt">
+  <div class="section-inner">
+    <p class="section-title">Kontakt</p>
+    <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>New Man Store</h3>
+
+        <span class="label">Adresse</span>
+        <p>Storgata 5, 8006 Bodø</p>
+
+        <span class="label">Telefon</span>
+        <p>75522039</p>
+
+        <span class="label">E-post</span>
+        <p>e.skorg@gmail.com</p>
+
+        <span class="label">Åpningstider</span>
+        <ul class="contact-list">
+          <li>Man–Fre: 10–20</li>
+          <li>Lørdag: 10–18</li>
+        </ul>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe src="https://maps.google.com/maps?q=New%20Man%20Store%20AS%2C%20Storgata%205%2C%208006%20Bod%C3%B8&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> New Man Store</div>
+    <div>Laget av Nicholas 🌐</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
