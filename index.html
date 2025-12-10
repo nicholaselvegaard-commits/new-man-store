@@ -23,7 +23,6 @@
       text-decoration: none;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -64,7 +63,6 @@
       color: #fff;
     }
 
-    /* HERO */
     .hero {
       min-height: 70vh;
       display: flex;
@@ -107,12 +105,6 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
     .btn {
       border-radius: 999px;
       padding: 0.7rem 1.3rem;
@@ -150,14 +142,12 @@
     }
 
     .hero-image img {
-      display: block;
       width: 100%;
       height: 100%;
       max-height: 360px;
       object-fit: cover;
     }
 
-    /* SECTIONS */
     section {
       padding: 3rem 1rem;
     }
@@ -186,7 +176,6 @@
       color: #333;
     }
 
-    /* GALLERY */
     .gallery {
       margin-top: 1.8rem;
       display: grid;
@@ -202,19 +191,11 @@
     }
 
     .gallery-item img {
-      display: block;
       width: 100%;
       height: 220px;
       object-fit: cover;
     }
 
-    .gallery-caption {
-      padding: 0.7rem 0.9rem 0.9rem;
-      font-size: 0.85rem;
-      color: #555;
-    }
-
-    /* CONTACT / LOCATION */
     .contact-grid {
       margin-top: 2rem;
       display: grid;
@@ -254,20 +235,19 @@
 
     .map-wrapper {
       background: #ddd;
+      border: 1px solid #ddd;
       border-radius: 1.2rem;
       overflow: hidden;
-      border: 1px solid #ddd;
       min-height: 260px;
     }
 
     .map-wrapper iframe {
-      border: 0;
       width: 100%;
       height: 100%;
+      border: 0;
       min-height: 260px;
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid #ddd;
       padding: 1.5rem 1rem 2rem;
@@ -281,20 +261,10 @@
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
       justify-content: space-between;
+      gap: 1rem;
     }
 
-    .footer-inner a {
-      opacity: 0.8;
-    }
-
-    .footer-inner a:hover {
-      opacity: 1;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 800px) {
       .hero-inner {
         grid-template-columns: 1fr;
@@ -309,172 +279,132 @@
       }
 
       .nav-links {
-        display: none; /* enkel mobilmeny (skjuler lenker) */
+        display: none;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="nav">
-      <div class="logo">NEW MAN STORE</div>
-      <nav class="nav-links">
-        <a href="#om">Butikken</a>
-        <a href="#bilder">Bilder</a>
-        <a href="#kontakt">Kontakt & åpningstider</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <h1>New Man Store</h1>
-          <h2>Herreklær · kvalitet · service</h2>
+<header>
+  <div class="nav">
+    <div class="logo">NEW MAN STORE</div>
+    <nav class="nav-links">
+      <a href="#om">Butikken</a>
+      <a href="#bilder">Bilder</a>
+      <a href="#kontakt">Kontakt & åpningstider</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>New Man Store</h1>
+        <h2>Herreklær · kvalitet · service</h2>
+        <p>New Man Store er en klesbutikk for menn i Bodø med fokus på gode passformer, tidløs stil og personlig service.</p>
+        <a href="#kontakt" class="btn btn-primary">Se kontaktinfo</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="bilder/butikk-front.jpg" alt="New Man Store Bodø">
+      </div>
+    </div>
+  </section>
+
+  <section id="om">
+    <div class="section-inner">
+      <p class="section-title">Butikk</p>
+      <h2 class="section-heading">Herrebutikk i Bodø</h2>
+      <p class="section-text">
+        New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr alt fra jeans, skjorter og strikk
+        til jakker, dresser og tilbehør.
+      </p>
+    </div>
+  </section>
+
+  <section id="bilder">
+    <div class="section-inner">
+      <p class="section-title">Bilder</p>
+      <h2 class="section-heading">Et lite glimt fra butikken</h2>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="bilder/interior-1.jpg" alt="">
+        </div>
+        <div class="gallery-item">
+          <img src="bilder/interior-2.jpg" alt="">
+        </div>
+        <div class="gallery-item">
+          <img src="bilder/interior-3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="section-inner">
+      <p class="section-title">Kontakt</p>
+      <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>New Man Store</h3>
+
+          <span class="label">Adresse</span>
+          <p>Storgata 5<br>8006 Bodø</p>
+
+          <span class="label">Telefon</span>
+          <p><a href="tel:+4775522039">75522039</a></p>
+
+          <span class="label">E-post</span>
+          <p><a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a></p>
+
+          <span class="label">Åpningstider</span>
+          <ul class="contact-list">
+            <li>Mandag: 10:00 – 20:00</li>
+            <li>Tirsdag: 10:00 – 20:00</li>
+            <li>Onsdag: 10:00 – 20:00</li>
+            <li>Torsdag: 10:00 – 20:00</li>
+            <li>Fredag: 10:00 – 20:00</li>
+            <li>Lørdag: 10:00 – 18:00</li>
+            <li>Søndag: Stengt</li>
+          </ul>
+
+          <span class="label">Følg oss</span>
           <p>
-            New Man Store er en klesbutikk for menn i Bodø, med fokus på gode passformer, tidløs stil og personlig
-            service. Enten du trenger klær til jobb, hverdag eller spesielle anledninger, hjelper vi deg å finne riktig uttrykk.
+            <a href="https://www.instagram.com/newmanstore/">Instagram</a> ·
+            <a href="https://www.facebook.com/newmanstore">Facebook</a>
           </p>
-          <div class="hero-cta">
-            <a href="#kontakt" class="btn btn-primary">Se kontaktinfo</a>
-            <a href="#bilder" class="btn btn-ghost">Bla i bildene</a>
-          </div>
         </div>
-        <div class="hero-image">
-          <!-- BYTT BILDE HER -->
-          <img src="bilder/butikk-front.jpg" alt="Inngangen til New Man Store i Bodø" />
+
+        <div class="map-wrapper">
+          <!-- ⭐ DITT GOOGLE MAPS-KART (responsivt) ⭐ -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6162.846792303438!2d14.361207714787922!3d67.28417282762457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45df105dd23a8b19%3A0x1f034347c0def60a!2sNew%20Man%20Store%20AS!5e0!3m2!1sno!2sno!4v1765354411030!5m2!1sno!2sno"
+            style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
       </div>
-    </section>
-
-    <!-- OM BUTIKKEN -->
-    <section id="om">
-      <div class="section-inner">
-        <p class="section-title">Butikk</p>
-        <h2 class="section-heading">Herrebutikk i Bodø</h2>
-        <p class="section-text">
-          New Man Store ligger i Storgata 5, 8006 Bodø. Vi tilbyr alt fra jeans, skjorter og strikk
-          til jakker, dresser og tilbehør. Vi legger vekt på en rolig og hyggelig handleopplevelse, hvor du får god hjelp
-          hvis du ønsker det – eller kan kikke i fred.
-        </p>
-      </div>
-    </section>
-
-    <!-- BILDER -->
-    <section id="bilder">
-      <div class="section-inner">
-        <p class="section-title">Bilder</p>
-        <h2 class="section-heading">Et lite glimt fra butikken</h2>
-        <p class="section-text">
-          Her er noen bilder fra butikken. Vi anbefaler uansett å ta turen innom – utvalget endrer seg gjennom sesongen.
-        </p>
-
-        <div class="gallery">
-          <div class="gallery-item">
-            <!-- BYTT BILDE -->
-            <img src="bilder/interior-1.jpg" alt="Interiør fra New Man Store" />
-            <div class="gallery-caption">Interiør og utstilling</div>
-          </div>
-          <div class="gallery-item">
-            <!-- BYTT BILDE -->
-            <img src="bilder/interior-2.jpg" alt="Klesstativ med herreklær" />
-            <div class="gallery-caption">Utvalg av skjorter og jakker</div>
-          </div>
-          <div class="gallery-item">
-            <!-- BYTT BILDE -->
-            <img src="bilder/interior-3.jpg" alt="Prøveområde i butikken" />
-            <div class="gallery-caption">Prøverom og sitteområde</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT / LOKASJON -->
-    <section id="kontakt">
-      <div class="section-inner">
-        <p class="section-title">Kontakt</p>
-        <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
-
-        <div class="contact-grid">
-          <!-- KONTAKTINFO -->
-          <div class="contact-card">
-            <h3>New Man Store</h3>
-
-            <div style="margin-bottom: 1rem;">
-              <span class="label">Adresse</span>
-              <div>Storgata 5<br />8006 Bodø</div>
-            </div>
-
-            <div style="margin-bottom: 1rem;">
-              <span class="label">Telefon</span>
-              <a href="tel:+4775522039">75522039</a>
-            </div>
-
-            <div style="margin-bottom: 1.2rem;">
-              <span class="label">E-post</span>
-              <a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a>
-            </div>
-
-            <div style="margin-bottom: 1.2rem;">
-              <span class="label">Åpningstider</span>
-              <ul class="contact-list">
-                <li>Mandag: 10:00 – 20:00</li>
-                <li>Tirsdag: 10:00 – 20:00</li>
-                <li>Onsdag: 10:00 – 20:00</li>
-                <li>Torsdag: 10:00 – 20:00</li>
-                <li>Fredag: 10:00 – 20:00</li>
-                <li>Lørdag: 10:00 – 18:00</li>
-                <li>Søndag: Stengt</li>
-              </ul>
-            </div>
-
-            <div>
-              <span class="label">Følg oss</span>
-              <div>
-                <a href="https://www.instagram.com/newmanstore/" target="_blank" rel="noopener noreferrer">
-                  Instagram
-                </a>
-                &nbsp;·&nbsp;
-                <a href="https://www.facebook.com/newmanstore" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- KART -->
-          <div class="map-wrapper">
-            <!--
-              Tips: For å få et helt korrekt kart:
-              1. Gå til Google Maps
-              2. Søk på "Storgata 5, 8006 Bodø"
-              3. Trykk "Del" → "Bygg inn et kart"
-              4. Kopier iframe-koden og erstatt denne:
-            -->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d14.392!3d67.28!2m3!1f0!2f0!3f0!3m2!1sno!2sno!4v0000000000000"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> New Man Store. Alle rettigheter forbeholdt.</div>
-      <div>Laget av Nicholas 🌐</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Setter riktig år i footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> New Man Store. Alle rettigheter forbeholdt.</div>
+    <div>Laget av Nicholas 🌐</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
