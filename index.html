@@ -1,281 +1,162 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>New Man Store – Herreklær i Bodø</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bruk Inter fra Google Fonts for et moderne, rent uttrykk -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    :root{
+      --max-width:1100px;
+      --accent:#111;
+      --muted:#8b8b8b;
+      --bg:#f6f6f6;
+      --card:#ffffff;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      color:var(--accent);
+      background: linear-gradient(180deg,#fbfbfb 0%, #f1f1f2 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
     }
 
-    body {
-      background: #f5f5f5;
-      color: #111;
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a{color:inherit;text-decoration:none}
 
     /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #ddd;
+    header{
+      position:sticky;top:0;z-index:50;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid #e7e7e8;
     }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .nav{
+      max-width:var(--max-width);margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
     }
+    .brand{font-weight:700;letter-spacing:0.18em}
+    .menu{display:flex;gap:18px;font-weight:500;color:var(--muted)}
+    .menu a{padding:6px 8px;border-radius:8px}
+    .menu a:hover{background:#111;color:#fff}
 
-    .logo {
-      letter-spacing: 0.15em;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-    }
-
-    .nav-links a:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    /* HERO MED BUTIKKBILDE SOM BAKGRUNN */
-    .hero {
-      min-height: 75vh;
-      padding: 6rem 1rem 5rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
+    /* HERO */
+    .hero{
+      min-height:68vh;
+      display:flex;align-items:center;
       background:
-        linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55)),
+        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
         url('Image%20(11).jpg') center/cover no-repeat;
+      color:#fff;
+    }
+    .hero-inner{max-width:var(--max-width);margin:0 auto;padding:72px 20px}
+    .hero h1{font-size:clamp(2.8rem,6vw,4.2rem);letter-spacing:0.18em;margin:0 0 12px}
+    .hero .sub{letter-spacing:0.22em;opacity:0.95;margin-bottom:18px;font-weight:500}
+    .hero p{max-width:46ch;opacity:0.95;margin-bottom:22px;font-size:1rem}
+    .btn{display:inline-block;background:#fff;color:#111;padding:12px 20px;border-radius:999px;font-weight:600;border:0;cursor:pointer}
+    .btn + .btn{margin-left:12px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.25)}
+
+    /* SECTION */
+    section{padding:48px 16px}
+    .section-inner{max-width:var(--max-width);margin:0 auto}
+    .section-title{font-size:0.85rem;letter-spacing:0.18em;color:var(--muted);margin-bottom:10px}
+    h2.section-heading{font-size:1.9rem;margin:6px 0 14px}
+
+    /* BRAND PILL GRID */
+    .brand-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+    .brand-pill{
+      background:var(--card);
+      border:1px solid #eee;
+      padding:14px 16px;
+      text-align:center;
+      border-radius:999px;
+      font-weight:600;
+      letter-spacing:0.08em;
+      color:var(--accent);
+      box-shadow: 0 6px 18px rgba(15,15,15,0.02);
     }
 
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* LARGER SLIDER GALLERY */
+    .slider-wrap{
+      margin-top:20px;
+      position:relative;
+      max-width:var(--max-width);
+      margin-left:auto;margin-right:auto;
+    }
+    .slider{
+      position:relative;overflow:hidden;border-radius:12px;
+      height:72vh; /* høyt, gir plass til portrettbilder */
+      background:#000;
+    }
+    .slides{
+      display:flex;height:100%;transition:transform 600ms cubic-bezier(.22,.9,.2,1);
+      will-change:transform;
+    }
+    .slide{
+      min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:0;
+    }
+    .slide img{
+      width:100%;height:100%;object-fit:cover;display:block;
     }
 
-    .hero-text h1 {
-      font-size: clamp(2.8rem, 5vw, 3.8rem);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
+    /* Controls */
+    .controls{
+      position:absolute;left:12px;right:12px;top:50%;transform:translateY(-50%);
+      display:flex;justify-content:space-between;pointer-events:none;
     }
+    .ctrl-btn{
+      pointer-events:auto;
+      background:rgba(0,0,0,0.45);border:0;color:#fff;padding:12px;border-radius:999px;cursor:pointer;
+      backdrop-filter: blur(4px);
+    }
+    .dots{
+      position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;border:0;
+    }
+    .dot.active{background:#fff}
 
-    .hero-text h2 {
-      font-size: 1.05rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.26em;
-      opacity: 0.95;
-      margin-bottom: 1.4rem;
+    /* Thumbs/stack under */
+    .thumbs{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px;
     }
+    .thumbs img{width:100%;height:110px;object-fit:cover;border-radius:8px;display:block;border:1px solid #eee}
 
-    .hero-text p {
-      max-width: 34rem;
-      font-size: 1.02rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
+    /* Kontakt layout */
+    .contact-grid{
+      display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start;
     }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.8rem 1.8rem;
-      font-size: 0.9rem;
-      border: 1px solid #fff;
-      background: #fff;
-      color: #111;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-block;
-    }
-
-    .btn:hover {
-      background: #e5e5e5;
-    }
-
-    /* GENERELLE SEKSJONER */
-    section {
-      padding: 3.5rem 1rem;
-      scroll-margin-top: 80px; /* gjør at #kontakt & co ikke havner under menyen */
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-heading {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-text {
-      max-width: 42rem;
-      font-size: 0.98rem;
-      color: #333;
-    }
-
-    /* MERKER */
-    .brand-grid {
-      margin-top: 1.8rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.7rem;
-    }
-
-    .brand-pill {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 0.55rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid #ddd;
-      background: #fff;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    /* GALLERI – 3 BILDER */
-    .gallery {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .gallery-item {
-      border-radius: 1.1rem;
-      overflow: hidden;
-      background: #ddd;
-      border: 1px solid #ddd;
-    }
-
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .gallery-caption {
-      padding: 0.8rem 1rem 1rem;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-    /* KONTAKT / KART */
-    .contact-grid {
-      margin-top: 2.2rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-      gap: 2rem;
-    }
-
-    .contact-card {
-      background: #fff;
-      border-radius: 1.2rem;
-      padding: 1.4rem 1.6rem;
-      border: 1px solid #ddd;
-    }
-
-    .label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #777;
-      margin-bottom: 0.2rem;
-      display: block;
-    }
-
-    .contact-list {
-      list-style: none;
-      font-size: 0.95rem;
-      padding-left: 0;
-    }
-
-    .contact-list li + li {
-      margin-top: 0.25rem;
-    }
-
-    .map-wrapper {
-      background: #ddd;
-      border-radius: 1.2rem;
-      overflow: hidden;
-      border: 1px solid #ddd;
-      min-height: 260px;
-    }
-
-    .map-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    .contact-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eee}
+    .contact-card .label{display:block;margin-bottom:6px;color:var(--muted);font-weight:600}
+    .map-wrapper{border-radius:12px;overflow:hidden;border:1px solid #eee;background:#ddd;min-height:260px}
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid #ddd;
-      padding: 1.5rem 1rem 2rem;
-      background: #111;
-      color: #ccc;
-      font-size: 0.85rem;
-    }
+    footer{padding:22px 16px;background:#0f0f10;color:#d6d6d6}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-      justify-content: space-between;
+    /* Responsiv tweaks */
+    @media (max-width:900px){
+      .hero{min-height:62vh}
+      .slider{height:56vh}
+      .contact-grid{grid-template-columns:1fr}
     }
-
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
+    @media (max-width:480px){
+      .hero h1{font-size:2rem}
+      .brand-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+      .slider{height:48vh}
+      .thumbs img{height:80px}
     }
   </style>
 </head>
@@ -284,9 +165,10 @@
   <!-- HEADER -->
   <header>
     <div class="nav">
-      <div class="logo">NEW MAN STORE</div>
-      <nav class="nav-links">
+      <div class="brand">NEW MAN STORE</div>
+      <nav class="menu">
         <a href="#butikken">Butikken</a>
+        <a href="#merker">Merker</a>
         <a href="#bilder">Bilder</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -294,81 +176,111 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner hero-text">
+  <section class="hero" aria-hidden="false">
+    <div class="hero-inner">
       <h1>NEW MAN STORE</h1>
-      <h2>HERREKLÆR · KVALITET · SERVICE</h2>
-      <p>
-        New Man Store er en klesbutikk for menn i Bodø med fokus på gode passformer,
-        tidløs stil og personlig service.
-      </p>
-      <a class="btn" href="#kontakt">Se kontaktinfo</a>
+      <div class="sub">HERREKLÆR · KVALITET · SERVICE</div>
+      <p>New Man Store er en klesbutikk for menn i Bodø med fokus på gode passformer, tidløs stil og personlig service.</p>
+      <div>
+        <a class="btn" href="#bilder">Se bilder</a>
+        <a class="btn" href="#kontakt">Kontakt oss</a>
+      </div>
     </div>
   </section>
 
-  <!-- BUTIKKEN + MERKER -->
+  <!-- BUTIKK -->
   <section id="butikken">
     <div class="section-inner">
-      <p class="section-title">Butikk</p>
+      <div class="section-title">BUTIKK</div>
       <h2 class="section-heading">Herrebutikk i Bodø</h2>
-      <p class="section-text">
-        New Man Store ligger i Storgata 5, 8006 Bodø. Vi fører et nøye utvalg av kvalitetsmerker
-        innen herremote – fra hverdagsplagg til dresser og yttertøy.
-      </p>
+      <p class="section-text">New Man Store ligger i Storgata 5, 8006 Bodø. Vi fører et nøye utvalg av kvalitetsmerker innen herremote – fra hverdagsplagg til dresser og yttertøy.</p>
+    </div>
+  </section>
 
-      <div style="margin-top: 2rem;">
-        <p class="section-title">Merker</p>
-        <div class="brand-grid">
-          <div class="brand-pill">Samsøe Samsøe</div>
-          <div class="brand-pill">Barbour</div>
-          <div class="brand-pill">Morris</div>
-          <div class="brand-pill">Holzweiler</div>
-          <div class="brand-pill">Tiger of Sweden</div>
-          <div class="brand-pill">Hestra</div>
-          <div class="brand-pill">Calvin Klein</div>
-          <div class="brand-pill">Scandinavian Edition</div>
-          <div class="brand-pill">Stenstrøm</div>
-          <div class="brand-pill">Jhonny Love</div>
-          <div class="brand-pill">Mono</div>
-          <div class="brand-pill">Common Project</div>
-          <div class="brand-pill">Replay</div>
-          <div class="brand-pill">Amanda Christensen</div>
-          <div class="brand-pill">Pampeano</div>
-          <div class="brand-pill">Bjørn Borg</div>
-        </div>
+  <!-- MERKER -->
+  <section id="merker">
+    <div class="section-inner">
+      <div class="section-title">MERKER</div>
+      <h2 class="section-heading" style="margin-bottom:8px;font-size:1.4rem">Merker vi fører</h2>
+
+      <div class="brand-grid">
+        <div class="brand-pill">Samsøe Samsøe</div>
+        <div class="brand-pill">Barbour</div>
+        <div class="brand-pill">Morris</div>
+        <div class="brand-pill">Holzweiler</div>
+        <div class="brand-pill">Tiger of Sweden</div>
+        <div class="brand-pill">Hestra</div>
+        <div class="brand-pill">Calvin Klein</div>
+        <div class="brand-pill">Scandinavian Edition</div>
+        <div class="brand-pill">Stenstrøm</div>
+        <div class="brand-pill">Mono</div>
+        <div class="brand-pill">Common Project</div>
+        <div class="brand-pill">Replay</div>
+        <div class="brand-pill">Amanda Christensen</div>
+        <div class="brand-pill">Pampeano</div>
+        <div class="brand-pill">Bjørn Borg</div>
       </div>
     </div>
   </section>
 
-  <!-- BILDER / PRODUKTER -->
+  <!-- STOR SLIDER GALLERY -->
   <section id="bilder">
     <div class="section-inner">
-      <p class="section-title">Bilder</p>
-      <h2 class="section-heading">Et lite glimt fra butikken</h2>
+      <div class="section-title">BILDER</div>
+      <h2 class="section-heading">Et større glimt fra butikken</h2>
 
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="Image%20(10).jpg" alt="Bord med gensere og sko" />
-          <div class="gallery-caption">Strikk, bukser og kvalitetsplagg.</div>
+      <div class="slider-wrap">
+        <div class="slider" id="slider">
+          <div class="slides" id="slides">
+            <!-- Slides: bruk URL-encoded filnavn for filer med mellomrom/parenteser -->
+            <div class="slide"><img src="Image%20(11).jpg" alt="Butikkfront" /></div>
+            <div class="slide"><img src="Image%20(10).jpg" alt="Bord med gensere og sko" /></div>
+            <div class="slide"><img src="Image%20(12).jpg" alt="Dress på dukke" /></div>
+            <div class="slide"><img src="Image%20(13).jpg" alt="Barbour jakke" /></div>
+
+            <!-- EKSTRA-PLASSHOLDERE FOR DE 5 NYE BILDENE DU VIL LEGGE TIL:
+                 Bytt disse src-verdiene til navnene du senere sender (husk URL-encoding hvis filnavnet har mellomrom).
+                 F.eks: "MineBilder%20(1).jpg" eller "mitt-bilde.jpg"
+            -->
+            <div class="slide"><img src="Image%20(14).jpg" alt="Ekstra bilde 1 (bytt navn ved behov)" /></div>
+            <div class="slide"><img src="Image%20(15).jpg" alt="Ekstra bilde 2 (bytt navn ved behov)" /></div>
+            <div class="slide"><img src="Image%20(16).jpg" alt="Ekstra bilde 3 (bytt navn ved behov)" /></div>
+            <div class="slide"><img src="Image%20(17).jpg" alt="Ekstra bilde 4 (bytt navn ved behov)" /></div>
+            <div class="slide"><img src="Image%20(18).jpg" alt="Ekstra bilde 5 (bytt navn ved behov)" /></div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls">
+            <button id="prev" class="ctrl-btn" aria-label="Forrige">‹</button>
+            <button id="next" class="ctrl-btn" aria-label="Neste">›</button>
+          </div>
+
+          <!-- dots -->
+          <div class="dots" id="dots"></div>
         </div>
 
-        <div class="gallery-item">
-          <img src="Image%20(12).jpg" alt="Dress på dukke" />
-          <div class="gallery-caption">Dress og skjorte til jobb og fest.</div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="Image%20(13).jpg" alt="Barbour jakke" />
-          <div class="gallery-caption">Yttertøy og lag-på-lag-stil.</div>
+        <!-- thumbs (valgfritt) -->
+        <div class="thumbs" id="thumbs">
+          <!-- små forhåndsvisninger (samme rekkefølge som slides) -->
+          <img src="Image%20(11).jpg" alt="thumb1" />
+          <img src="Image%20(10).jpg" alt="thumb2" />
+          <img src="Image%20(12).jpg" alt="thumb3" />
+          <img src="Image%20(13).jpg" alt="thumb4" />
+          <img src="Image%20(14).jpg" alt="thumb5" />
+          <img src="Image%20(15).jpg" alt="thumb6" />
+          <img src="Image%20(16).jpg" alt="thumb7" />
+          <img src="Image%20(17).jpg" alt="thumb8" />
+          <img src="Image%20(18).jpg" alt="thumb9" />
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- KONTAKT -->
   <section id="kontakt">
     <div class="section-inner">
-      <p class="section-title">Kontakt</p>
+      <div class="section-title">KONTAKT</div>
       <h2 class="section-heading">Kontaktinformasjon & åpningstider</h2>
 
       <div class="contact-grid">
@@ -376,32 +288,32 @@
           <h3>New Man Store</h3>
 
           <span class="label">Adresse</span>
-          <p>Storgata 5, 8006 Bodø</p>
+          <div>Storgata 5<br>8006 Bodø</div>
 
           <span class="label">Telefon</span>
-          <p>75522039</p>
+          <div><a href="tel:+4775522039">75522039</a></div>
 
           <span class="label">E-post</span>
-          <p>e.skorg@gmail.com</p>
+          <div><a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a></div>
 
           <span class="label">Åpningstider</span>
           <ul class="contact-list">
-            <li>Man–Fre: 10–20</li>
-            <li>Lørdag: 10–18</li>
+            <li>Mandag–Fredag: 10:00 – 20:00</li>
+            <li>Lørdag: 10:00 – 18:00</li>
           </ul>
 
           <span class="label">Følg oss</span>
-          <p>
-            <a href="https://www.instagram.com/newmanstore/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            ·
-            <a href="https://www.facebook.com/newmanstore" target="_blank" rel="noopener noreferrer">Facebook</a>
-          </p>
+          <div>
+            <a href="https://www.instagram.com/newmanstore/" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://www.facebook.com/newmanstore" target="_blank" rel="noopener">Facebook</a>
+          </div>
         </div>
 
         <div class="map-wrapper">
           <iframe
             src="https://maps.google.com/maps?q=New%20Man%20Store%20AS%2C%20Storgata%205%2C%208006%20Bod%C3%B8&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"></iframe>
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -415,9 +327,81 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS: enkel slider / autoplay / piler / prikker / thumbs -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      const dotsContainer = document.getElementById('dots');
+      const thumbs = document.getElementById('thumbs');
+      let index = 0;
+      const total = slides.length;
+      let autoplay = true;
+      let timer = null;
+      const interval = 4000; // ms
 
+      function goTo(i){
+        index = (i + total) % total;
+        slidesEl.style.transform = `translateX(${-index * 100}%)`;
+        updateDots();
+      }
+
+      function next(){ goTo(index+1) }
+      function prev(){ goTo(index-1) }
+
+      // create dots
+      for(let i=0;i<total;i++){
+        const d = document.createElement('button');
+        d.className='dot';
+        d.onclick = ()=>{ goTo(i); resetTimer(); };
+        dotsContainer.appendChild(d);
+      }
+
+      function updateDots(){
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((d,idx)=> d.classList.toggle('active', idx===index));
+      }
+
+      // click thumbs to jump
+      if(thumbs){
+        const thumbImgs = thumbs.querySelectorAll('img');
+        thumbImgs.forEach((t,idx)=> {
+          t.style.cursor='pointer';
+          t.addEventListener('click', ()=>{ goTo(idx); resetTimer(); });
+        });
+      }
+
+      prevBtn.addEventListener('click', ()=>{ prev(); resetTimer(); });
+      nextBtn.addEventListener('click', ()=>{ next(); resetTimer(); });
+
+      function startTimer(){
+        if(autoplay){
+          timer = setInterval(()=>{ next(); }, interval);
+        }
+      }
+      function stopTimer(){ if(timer) clearInterval(timer); timer=null; }
+      function resetTimer(){ stopTimer(); startTimer(); }
+
+      // init
+      goTo(0);
+      startTimer();
+
+      // pause on hover
+      const slider = document.getElementById('slider');
+      slider.addEventListener('mouseenter', ()=> { stopTimer(); });
+      slider.addEventListener('mouseleave', ()=> { startTimer(); });
+
+      // keyboard support
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowLeft') { prev(); resetTimer(); }
+        if(e.key === 'ArrowRight') { next(); resetTimer(); }
+      });
+    })();
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
