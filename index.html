@@ -1,308 +1,259 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html lang="no">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Man Store – Bodø</title>
+  <meta charset="UTF-8" />
+  <title>New Man Store – Bodø</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-/* GLOBAL */
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #e7e2dc url('https://www.transparenttextures.com/patterns/paper.png');
-  font-family: "Inter", sans-serif;
-  color: #111;
-  -webkit-font-smoothing: antialiased;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Layout helpers */
-.container {
-  width: 92%;
-  max-width: 1200px;
-  margin: auto;
-}
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #ece9e4;
+      color: #111;
+    }
 
-/* HEADER */
-header {
-  padding: 22px 0;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid #ccc7c2;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo { 
-  font-size: 1.2rem; 
-  font-weight: 700; 
-  letter-spacing: 0.18em;
-}
-.nav-links {
-  display: flex;
-  gap: 18px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-}
-.nav-links a:hover { color: #000; }
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(236,233,228,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
 
-/* HERO */
-.hero {
-  width: 100%;
-  height: 60vh;
-  background: 
-    linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-    url('Image%20(11).jpg') center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-  padding: 50px;
-  color: #fff;
-}
-.hero h1 {
-  font-size: 3rem;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-  margin: 0;
-}
-.hero p {
-  max-width: 480px;
-  margin-top: 12px;
-  opacity: 0.95;
-}
+    .nav {
+      max-width: 1300px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* GALLERY – LOOKBOOK STYLE */
-.gallery {
-  margin-top: 60px;
-  column-count: 2;
-  column-gap: 24px;
-}
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 24px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-.gallery-item img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform .4s ease;
-}
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
+    .logo {
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      font-weight: 600;
+    }
 
-/* SECTION TITLES */
-.section-title {
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-  color: #6a6763;
-  margin: 60px 0 10px;
-  text-transform: uppercase;
-}
-.section-heading {
-  font-size: 2rem;
-  margin-top: 0;
-}
+    .nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 14px;
+      margin-left: 20px;
+      opacity: 0.7;
+    }
 
-/* LOGO GRID FOR BRANDS */
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
-}
-.brand {
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 14px 0;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-  opacity: 0.85;
-  transition: opacity .25s ease;
-}
-.brand:hover { opacity: 1; }
+    .nav a:hover {
+      opacity: 1;
+    }
 
-/* CONTACT */
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 30px;
-}
-.contact-card {
-  padding: 22px;
-  background: #f7f5f1;
-  border-radius: 12px;
-}
-.contact-card h3 { margin-top: 0; }
+    /* ===== HERO ===== */
+    .hero {
+      padding: 100px 24px 60px;
+      max-width: 1300px;
+      margin: auto;
+    }
 
-.map {
-  height: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #cfcac4;
-}
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      margin: 0 0 16px;
+    }
 
-/* SOCIAL ICONS */
-.socials {
-  margin-top: 15px;
-  display: flex;
-  gap: 14px;
-}
-.socials a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.socials a svg {
-  width: 20px;
-  fill: #fff;
-}
+    .hero p {
+      max-width: 520px;
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #444;
-  margin-top: 80px;
-}
+    /* ===== IMAGE GALLERY ===== */
+    .gallery {
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
 
-/* ANIMATIONS */
-.gallery-item, .brand, .contact-card {
-  animation: fadeUp .8s ease both;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(35px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
+    .img {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Layout-variasjon (Aspeli-feel) */
+    .img-1 { grid-column: 1 / 8; height: 520px; }
+    .img-2 { grid-column: 8 / 13; height: 520px; }
+    .img-3 { grid-column: 1 / 6; height: 620px; }
+    .img-4 { grid-column: 6 / 13; height: 420px; }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .img {
+        grid-column: auto !important;
+        height: auto !important;
+      }
+    }
+
+    /* ===== INFO ===== */
+    .info {
+      max-width: 1300px;
+      margin: auto;
+      padding: 80px 24px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .info h2 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .info p {
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 900px) {
+      .info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== SOCIAL ===== */
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .socials svg {
+      width: 20px;
+      fill: #fff;
+    }
+
+    /* ===== MAP ===== */
+    .map {
+      max-width: 1300px;
+      margin: auto;
+      padding: 0 24px 80px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      border: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
-
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="container">
-    <nav>
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
       <div class="logo">NEW MAN STORE</div>
-      <div class="nav-links">
+      <div>
         <a href="#bilder">Bilder</a>
-        <a href="#merker">Merker</a>
         <a href="#kontakt">Kontakt</a>
       </div>
-    </nav>
-  </div>
-</header>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
+  <!-- HERO -->
+  <section class="hero">
     <h1>NEW MAN STORE</h1>
-    <p>Herrebutikk i Bodø med fokus på kvalitet, stil og service.</p>
-  </div>
-</section>
+    <p>
+      Herrebutikk i Bodø med fokus på kvalitet, passform og personlig service.
+    </p>
+  </section>
 
-
-<!-- LOOKBOOK GALLERY -->
-<div class="container">
-  <div id="bilder" class="section-title">Bilder</div>
-  <h2 class="section-heading">Lookbook</h2>
-
-  <div class="gallery">
-
-    <!-- Nåværende bilder -->
-    <div class="gallery-item">
+  <!-- GALLERY -->
+  <section id="bilder" class="gallery">
+    <div class="img img-1">
       <img src="Image%20(11).jpg" alt="">
     </div>
 
-    <div class="gallery-item">
+    <div class="img img-2">
       <img src="Image%20(10).jpg" alt="">
     </div>
 
-    <div class="gallery-item">
+    <div class="img img-3">
       <img src="Image%20(12).jpg" alt="">
     </div>
 
-    <div class="gallery-item">
+    <div class="img img-4">
       <img src="Image%20(13).jpg" alt="">
     </div>
+  </section>
 
-    <!-- Her kan du legge inn flere bilder senere -->
-    <!-- Bare kopier en gallery-item blokk -->
-  </div>
-</div>
+  <!-- INFO -->
+  <section id="kontakt" class="info">
+    <div>
+      <h2>Kontakt</h2>
+      <p>
+        Storgata 5<br>
+        8006 Bodø<br><br>
+        Telefon: 75 52 20 39<br>
+        E-post: e.skorg@gmail.com
+      </p>
 
-
-<!-- MERKER -->
-<div class="container">
-  <div id="merker" class="section-title">MERKER</div>
-  <h2 class="section-heading">Våre merker</h2>
-
-  <div class="brand-grid">
-    <div class="brand">Samsøe Samsøe</div>
-    <div class="brand">Barbour</div>
-    <div class="brand">Morris</div>
-    <div class="brand">Holzweiler</div>
-    <div class="brand">Tiger of Sweden</div>
-    <div class="brand">Hestra</div>
-    <div class="brand">Calvin Klein</div>
-    <div class="brand">Scandinavian Edition</div>
-    <div class="brand">Stenstrøm</div>
-    <div class="brand">Mono</div>
-    <div class="brand">Common Projects</div>
-    <div class="brand">Replay</div>
-    <div class="brand">Amanda Christensen</div>
-    <div class="brand">Pampeano</div>
-    <div class="brand">Bjørn Borg</div>
-  </div>
-</div>
-
-
-<!-- KONTAKT -->
-<div class="container">
-  <div id="kontakt" class="section-title">Kontakt</div>
-  <h2 class="section-heading">Kontakt & Åpningstider</h2>
-
-  <div class="contact-wrapper">
-
-    <!-- INFO CARD -->
-    <div class="contact-card">
-      <h3>New Man Store</h3>
-      <p>Storgata 5, 8006 Bodø</p>
-      <p>Tlf: <a href="tel:+4775522039">75522039</a></p>
-      <p>E-post: <a href="mailto:e.skorg@gmail.com">e.skorg@gmail.com</a></p>
-
-      <p><strong>Åpningstider:</strong><br>
-      Man–Fre: 10–20<br>
-      Lørdag: 10–18</p>
+      <p>
+        <strong>Åpningstider</strong><br>
+        Mandag–Fredag: 10–20<br>
+        Lørdag: 10–18
+      </p>
 
       <div class="socials">
-        <!-- Instagram -->
         <a href="https://www.instagram.com/newmanstore/" target="_blank">
           <svg viewBox="0 0 24 24">
-            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/>
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10z"/>
           </svg>
         </a>
 
-        <!-- Facebook -->
         <a href="https://www.facebook.com/newmanstore" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.6l-.4 3H14v7A10 10 0 0022 12"/>
@@ -311,22 +262,25 @@ footer {
       </div>
     </div>
 
-    <!-- MAP -->
-    <div class="map">
-      <iframe
-        src="https://maps.google.com/maps?q=Storgata%205%20Bod%C3%B8&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="100%" frameborder="0" style="border:0;">
-      </iframe>
+    <div>
+      <h2>Besøk oss</h2>
+      <p>
+        Midt i Bodø sentrum. En butikk for menn som setter pris på kvalitet og stil.
+      </p>
     </div>
+  </section>
 
+  <!-- MAP -->
+  <div class="map">
+    <iframe
+      src="https://maps.google.com/maps?q=Storgata%205%20Bod%C3%B8&z=15&output=embed">
+    </iframe>
   </div>
-</div>
 
-
-<!-- FOOTER -->
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> New Man Store
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> New Man Store
+  </footer>
 
 </body>
 </html>
